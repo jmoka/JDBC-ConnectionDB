@@ -7,6 +7,7 @@ import java.util.Properties;
 
 import db.Exceptions.DbException;
 import db.data.LoadProperties;
+import db.data.LoadVariaveisAmbiente;
 
 public class DB {
 
@@ -44,6 +45,23 @@ public class DB {
 		// caso a conexão não for nume retorna a conexão existente
 		return conn;
 
+	}
+	// Criar a Conexção como Banco Usando o Properties
+	public static Connection getConectComPropertiesVariaveis() {
+
+		if (conn == null) {
+			try {
+				Properties props = LoadVariaveisAmbiente.carregarPropertiesDoAmbiente();
+				String url = props.getProperty("dburl");
+
+				System.out.println("Conectando ao banco de dados: " + url);
+				conn = DriverManager.getConnection(url, props);
+			} catch (SQLException e) {
+				throw new DbException("Erro ao conectar: " + e.getMessage());
+			}
+		}
+
+		return conn;
 	}
 
 		

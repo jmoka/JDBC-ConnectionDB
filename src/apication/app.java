@@ -12,8 +12,8 @@ public class app {
 		System.out.println("====================");	
 		System.out.println("Banco Conectado");	
 		System.out.println("====================");	
-			Connection conn = DB.getConectComProperties();
-		// Connection conn = LerVariaveisAmbiente.getConectVariaveisAmbiente(DB.conn);
+		//Connection conn = DB.getConectComProperties();
+		 Connection conn = DB.getConectComPropertiesVariaveis();
 			
 			
 			CloseConection.closeConection(conn);

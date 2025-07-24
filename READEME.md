@@ -82,12 +82,16 @@ Salve o `.jar` em `C:\Program Files\Java\lib` ou em outro local conveniente.
 ### 1. Usando `db.properties`
 
 #### 📁 Arquivo: `properties/db.properties`
-
-```properties
-dburl=jdbc:mysql://localhost:3306/meu_banco
-user=root
-password=123456
-````
+	- Crie uma pasta na raiz do projeto, como nome de properties e dentro dela crie um arquivo chamado
+	- db.properties e dentro do arquivo 
+	
+	
+						dburl=jdbc:mysql://localhost:3306/meu_banco
+						user=root
+						password=123456
+						
+	- Lembrando que antes tem que ser criado uma base de dados chamado de exemplo : "meu_banco"
+					
 
 #### 📦 Classe: `LoadProperties.java`
 
